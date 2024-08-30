@@ -13,12 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/emails")
 public class EmailController {
-
+    @Autowired
     private EmailService emailService;
-
-    public EmailController(EmailService emailService) {
-        this.emailService = emailService;
-    }
 
     @PostMapping
     public ResponseEntity<Void> send(@RequestBody EmailDto dto){
